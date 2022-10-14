@@ -124,10 +124,11 @@ h3 {
   transition: background-color 0.3s ease, border-color 0.3s ease, color 0.2s linear;
 }
 
-.button:focus {
+.button:focus.focus-visible {
   background-color: var(--global-color-focus);
   border-color: var(--global-color-focus);
   color: var(--color-button-fha);
+  outline: none;
 }
 
 .button:hover {
@@ -183,9 +184,10 @@ h3 {
   line-height: 24px;
   color: var(--global-color-static);
   transition: color 0.2s linear;
+  outline: none;
 }
 
-.link:focus {
+.link:focus.focus-visible {
   outline-offset: 2px;
   outline: 1px solid var(--global-color-focus);
   color: var(--global-color-focus);
@@ -226,6 +228,11 @@ h3 {
   flex-shrink: 0;
 }
 
+.logo-link:focus.focus-visible {
+  outline-offset: 5px;
+  outline: 1px solid var(--global-color-focus);
+}
+
 .header-logo {
   width: 261px;
   height: 54px;
@@ -241,7 +248,7 @@ h3 {
   transition: color 0.2s linear;
 }
 
-.header-number:focus {
+.header-number:focus.focus-visible {
   outline-offset: 5px;
   outline: 1px solid var(--global-color-focus);
   color: var(--global-color-focus);
@@ -269,7 +276,7 @@ h3 {
   transition: fill 0.2s linear;
 }
 
-.header-account:focus svg {
+.header-account:focus.focus-visible svg {
   fill: var(--global-color-focus);
 }
 
@@ -311,7 +318,7 @@ h3 {
   color: var(--color-menu-static);
 }
 
-.header-link:focus {
+.header-link:focus.focus-visible {
   outline-offset: 5px;
   outline: 1px solid var(--global-color-focus);
   color: var(--global-color-focus);
@@ -476,6 +483,7 @@ h3 {
   font-weight: 400;
   line-height: 16px;
   color: var(--color-special-link);
+  outline: none;
 }
 
 .special-article-link:active {
@@ -491,13 +499,12 @@ h3 {
   left: 0;
   width: 100%;
   height: 100%;
-  pointer-events: none;
   outline: 1px solid var(--global-color-focus);
   outline-offset: 8px;
   opacity: 0;
 }
 
-.special-article-link:focus::after {
+.special-article-link:focus.focus-visible::after {
   opacity: 1;
 }
 
@@ -602,9 +609,10 @@ h3 {
   margin-right: auto;
   min-width: 100px;
   min-height: 40px;
+  outline: none;
 }
 
-.services-link:focus {
+.services-link:focus.focus-visible {
   color: var(--global-color-focus);
 }
 
@@ -631,7 +639,7 @@ h3 {
   opacity: 0;
 }
 
-.services-link:focus::after {
+.services-link:focus.focus-visible::after {
   opacity: 1;
 }
 
@@ -646,7 +654,7 @@ h3 {
   stroke: var(--global-color-static);
 }
 
-.services-link:focus svg {
+.services-link:focus.focus-visible svg {
   fill: transparent;
   stroke: var(--global-color-focus);
 }
@@ -874,6 +882,7 @@ h3 {
   font-weight: 500;
   line-height: 40px;
   color: var(--color-placement-link);
+  outline: none;
 }
 
 .placement-link-svg {
@@ -890,7 +899,12 @@ h3 {
   left: 0;
   width: 100%;
   height: 100%;
-  border-radius: 15px;
+  outline: 1px solid transparent;
+  outline-offset: 8px;
+}
+
+.placement-link:focus.focus-visible:after {
+  outline-color: var(--global-color-focus);
 }
 
 .placement-button {
@@ -1159,13 +1173,14 @@ input[type=number]::-webkit-outer-spin-button {
   display: inline-block;
   width: 25px;
   height: 25px;
+  outline: none;
 }
 
 .footer-social-link svg {
   fill: var(--color-social-static);
 }
 
-.footer-social-link:focus svg {
+.footer-social-link:focus.focus-visible svg {
   fill: var(--global-color-focus);
 }
 
